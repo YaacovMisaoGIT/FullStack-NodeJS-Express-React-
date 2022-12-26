@@ -1,7 +1,7 @@
 {
   "name": "frontend",
+  "proxy": "http://localhost:3500",
   "private": true,
-  "proxy": "http://127.0.0.1/3500",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

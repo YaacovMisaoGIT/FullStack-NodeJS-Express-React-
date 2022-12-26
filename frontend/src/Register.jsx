@@ -54,7 +54,7 @@ const Register = () => {
   
 
   const handleSubmit = async (e) => {
-    console.log(`${process.env.REACT_APP_API_KEY}`);
+    // console.log(`${process.env.REACT_APP_API_KEY}`);
     e.preventDefault();
     // if button enabled with JS hack
     const v1 = USER_REGEX.test(name);
@@ -64,12 +64,12 @@ const Register = () => {
         return;
     }
     try {
-        const response = await axios.post(REGISTER_URL,
-            JSON.stringify({ name, pwd }),
-            {
+        const response = await fetch(REGISTER_URL,{
+          METHOD:"POST",
                 headers: { 'Content-Type': 'application/json' },
                 withCredentials: true
-            }
+            },
+            JSON.stringify({ name, pwd }),
         );
         console.log(response?.data);
         console.log(response?.accessToken);
